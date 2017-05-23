@@ -26,5 +26,4 @@ const defaults = {
     ]
 };
 
-console.log(Object.assign({}, defaults, assets, css, js, eslint, stylelint));
 module.exports = Object.assign({}, defaults, assets, css, js, eslint, stylelint);
