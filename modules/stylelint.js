@@ -8,9 +8,9 @@ module.exports = function(isProd, styleLintPlugin){
 
     return {
         plugins: [
-            new styleLintPlugin({
-                // stylelint options
-            })
+            /*new styleLintPlugin({
+
+            })*/
         ]
     };
 };

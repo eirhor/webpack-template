@@ -1,4 +1,8 @@
 module.exports = function(isProd, extractTextPlugin, outputFile) {
+    var extractSass = new extractTextPlugin({
+        fileName: outputFile
+    });
+
     if (isProd){
         // Production stuff
     }
@@ -11,12 +15,25 @@ module.exports = function(isProd, extractTextPlugin, outputFile) {
             loaders: [
                 {
                     test: /\.scss$/,
-                    loader: extractTextPlugin.extract('style', 'css-loader!autoprefixer-loader!sass-loader')
+                    use: extractSass.extract({
+                        fallback: 'style-loader',
+                        use: [
+                            {
+                                loader: 'css-loader'
+                            },
+                            {
+                                loader: 'autoprefixer-loader'
+                            },
+                            {
+                                loader: 'sass-loader'
+                            }
+                        ]
+                    })
                 }
             ]
         },
         plugins: [
-            new extractTextPlugin(outputFile)
+            extractSass
         ]
     };
 };
