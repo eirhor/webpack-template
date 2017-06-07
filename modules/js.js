@@ -4,7 +4,7 @@ module.exports = {
             {
                 test: /\.(js|es6|jsx)$/,
                 exclude: /node_modules/,
-                loader: 'babel'
+                loader: 'babel-loader'
             }
         ]
     },

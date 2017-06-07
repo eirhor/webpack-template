@@ -4,11 +4,30 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const nestedObjectAssign = require('nested-object-assign');
 
 // webpack modules
-const assets = require('./modules/assets');
-const css = require('./modules/css');
-const js = require('./modules/js');
-const eslint = require('./modules/eslint');
-const stylelint = require('./modules/stylelint');
+var assets = {};
+var css = {};
+var js = {};
+var eslint = {};
+var stylelint = {};
+
+var isProd = false;  // TODO: Add node_env check
+
+if (isProd) {
+    //TODO: Recreate modules to be a function returning prod config
+    assets = require('./modules/assets')();
+    css = require('./modules/css')();
+    js = require('./modules/js')();
+    eslint = require('./modules/eslint')();
+    stylelint = require('./modules/stylelint')();
+}
+else {
+    //TODO: Recreate modules to be a function returning dev config
+    assets = require('./modules/assets')();
+    css = require('./modules/css')();
+    js = require('./modules/js')();
+    eslint = require('./modules/eslint')();
+    stylelint = require('./modules/stylelint')();
+}
 
 const defaults = {
     context: path.resolve('js'),
