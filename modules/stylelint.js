@@ -1,9 +1,16 @@
-var StyleLintPlugin = require('stylelint-webpack-plugin');
+module.exports = function(isProd, styleLintPlugin){
+    if (isProd){
+        //Prod stuff
+    }
+    else {
+        //Dev stuff
+    }
 
-module.exports = {
-    plugins: [
-        new StyleLintPlugin({
-            // stylelint options
-        })
-    ]
+    return {
+        plugins: [
+            new styleLintPlugin({
+                // stylelint options
+            })
+        ]
+    };
 };
