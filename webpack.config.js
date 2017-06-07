@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const nestedObjectAssign = require('nested-object-assign');
 
 // webpack modules
 const assets = require('./modules/assets');
@@ -16,14 +17,9 @@ const defaults = {
         path: path.resolve('./dist'),
         filename: 'bundle.js'
     },
-    module: {
-        loaders: [],
-        rules: []
-    },
-    resolve: {},
     plugins: [
         new ExtractTextPlugin('bundle.css')
     ]
 };
 
-module.exports = Object.assign({}, defaults, assets, css, js, eslint, stylelint);
+module.exports = nestedObjectAssign({}, defaults, assets, css, js, eslint, stylelint);

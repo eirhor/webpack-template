@@ -32,3 +32,5 @@ _ReSharper*/
 packages/
 #node modules
 node_modules/
+
+\.idea/

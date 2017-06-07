@@ -2,6 +2,20 @@
   "name": "webpack-template",
   "version": "0.0.1",
   "author": "Eirik Horvath",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eirhor/webpack-template.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eirhor/webpack-template/issues"
+  },
+  "homepage": "https://github.com/eirhor/webpack-template#readme",
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",
     "babel-core": "^6.21.0",
@@ -12,6 +26,7 @@
     "eslint-loader": "^1.7.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
+    "nested-object-assign": "^1.0.0",
     "node-sass": "^4.3.0",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
